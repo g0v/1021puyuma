@@ -71,5 +71,5 @@ func main() {
 	}
 	dataJSON, _ := json.Marshal(data)
 	fmt.Println(string(dataJSON))
-	ioutil.WriteFile("puyuma.json", dataJSON, 0644)
+	ioutil.WriteFile("people.json", dataJSON, 0644)
 }
