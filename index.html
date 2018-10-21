@@ -132,7 +132,7 @@
               </a>
             </li>
             <li>
-              <a ng-show="type=='people' || type=='hospital'" href="http://www.gov.taipei/ct.asp?xItem=108880666&ctNode=38161&mp=100001" target="_blank">資料來源: 衛生福利部</a>
+              <a ng-show="type=='people' || type=='hospital'" href="https://drive.google.com/drive/folders/1qHAOXID3_pW7JBE4xYN2xNjjumKTl38y" target="_blank">資料來源: 衛生福利部</a>
               <a ng-show="type=='blood'" href="http://www.blood.org.tw" target="_blank">資料來源: 血液基金會</a>
             </li>
             <li>
@@ -142,7 +142,6 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他平台 <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="http://er.mohw.g0v.tw/" target="_blank">全國重度級急救責任醫院急診即時訊息</a></li>
-                <li><a href="http://beta.hackfoldr.org/627pray" target="_blank">HackFoldr</a></li>
               </ul>
             </li>
           </ul>
@@ -629,7 +628,7 @@ angular
       }
     });
 
-    $http.get('').success(function (data) {
+    $http.get('./people.json').success(function (data) {
       $scope.data = data;
 
       $scope.data.data = $scope.data.data.filter(function(item) {
