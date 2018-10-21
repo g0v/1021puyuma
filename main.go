@@ -69,7 +69,7 @@ func main() {
 		License:    "cc0",
 		People:     people,
 	}
-	dataJSON, _ := json.Marshal(data)
+	dataJSON, _ := json.MarshalIndent(data, "", "    ")
 	fmt.Println(string(dataJSON))
 	ioutil.WriteFile("people.json", dataJSON, 0644)
 }
