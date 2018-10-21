@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <meta property="fb:admins" content="1678986882" />
-    <title>八仙粉塵爆炸傷者開放資料查詢</title>
+    <title>20181021 普悠瑪列車事故</title>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
     <style>
       [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -98,7 +98,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-64601259-1', 'auto');
+      ga('create', 'UA-64601259-2', 'auto');
       ga('send', 'pageview');
 
     </script>
@@ -118,7 +118,7 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">
-            <span ng-show="type=='people' || type=='hospital'">八仙粉塵爆炸傷者查詢</span>
+            <span ng-show="type=='people' || type=='hospital'">20181021 普悠瑪列車事故</span>
             <span ng-show="type=='care'">傷者家屬住宿查詢</span>
             <span ng-show="type=='blood'">捐血車/站查詢</span>
           </a>
@@ -127,12 +127,12 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="https://github.com/g0v/color/issues" target="_blank">
+              <a href="https://github.com/g0v/1021puyuma/issues" target="_blank">
                 錯誤回報 New Issue
               </a>
             </li>
             <li>
-              <a ng-show="type=='people' || type=='hospital'" href="http://www.gov.taipei/ct.asp?xItem=108880666&ctNode=38161&mp=100001" target="_blank">資料來源: 臺北市府資訊局</a>
+              <a ng-show="type=='people' || type=='hospital'" href="http://www.gov.taipei/ct.asp?xItem=108880666&ctNode=38161&mp=100001" target="_blank">資料來源: 衛生福利部</a>
               <a ng-show="type=='blood'" href="http://www.blood.org.tw" target="_blank">資料來源: 血液基金會</a>
             </li>
             <li>
@@ -141,8 +141,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">其他平台 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="http://er.mohw.g0v.tw/#/dashboard/file/default.json" target="_blank">全國重度級急救責任醫院急診即時訊息</a></li>
-                <li><a href="https://www.google.com/maps/d/u/0/viewer?mid=zGq2VJ5NdtUs.kDYAcwSlWkN8" target="_blank">台灣捐血站/車地圖</a></li>
+                <li><a href="http://er.mohw.g0v.tw/" target="_blank">全國重度級急救責任醫院急診即時訊息</a></li>
                 <li><a href="http://beta.hackfoldr.org/627pray" target="_blank">HackFoldr</a></li>
               </ul>
             </li>
@@ -155,13 +154,7 @@
         <a class="btn btn-default btn-first" ng-class="{'active': type=='people'}" href="#people" ng-click="type='people'"><i class="icon-find"></i>家屬尋人</a>
       </div>
       <div class="btn-group" role="group">
-        <a class="btn btn-default" ng-class="{'active': type=='care'}" href="#care" ng-click="type='care'"><i class="icon-hotel"></i>出院照護</a>
-      </div>
-      <div class="btn-group" role="group">
         <a class="btn btn-default" ng-class="{'active': type=='hospital'}" href="#hospital" ng-click="type='hospital'"><i class="icon-hospital"></i>醫院概況</a>
-      </div>
-      <div class="btn-group" role="group">
-        <a class="btn btn-default" ng-class="{'active': type=='blood'}" href="#blood" ng-click="type='blood'"><i class="icon-blood"></i>捐款/捐血</a>
       </div>
     </div>
     <div id="input-box" ng-show="type=='people' || type=='blood' || type=='care'">
@@ -247,39 +240,14 @@
 
     <div class="row" ng-show="type=='hospital'">
       <div class="col-lg-12">
-        <div class="alert alert-warning" role="alert">
-          - 應變中心24H服務專線<br />
-          &nbsp;&nbsp;<a href="tel:0229646715" target="_blank" ng-click="open('提醒','應變中心電話A')">02-29646715 <i class="glyphicon glyphicon-earphone"></i></a>
-          <a href="tel:0289535599" target="_blank" ng-click="open('提醒','應變中心電話B')">02-89535599 <i class="glyphicon glyphicon-earphone"></i></a>
-          <br />
-          - 陽光基金會<br />
-          &nbsp;&nbsp;北區<a href="tel:0225078006" target="_blank" ng-click="open('提醒','陽光基金會北區')"> 02-25078006 <i class="glyphicon glyphicon-earphone"></i></a>
-          &nbsp;中區<a href="tel:0423582336" target="_blank" ng-click="open('提醒','陽光基金會中區')"> 04-23582336 <i class="glyphicon glyphicon-earphone"></i></a><br />
-          &nbsp;&nbsp;雲嘉<a href="tel:052280300" target="_blank" ng-click="open('提醒','陽光基金會雲嘉')"> 05-2280300 <i class="glyphicon glyphicon-earphone"></i></a>
-          &nbsp;南區<a href="tel:075587166" target="_blank" ng-click="open('提醒','陽光基金會南區')"> 07-5587166 <i class="glyphicon glyphicon-earphone"></i></a><br />
-          &nbsp;&nbsp;東區<a href="tel:038563213" target="_blank" ng-click="open('提醒','陽光基金會東區')"> 03-8563213 <i class="glyphicon glyphicon-earphone"></i></a>
-        </div>
-        <br />
-        <!-- <span class="label label-success">已出院: {{total['已出院']}}</span> -->
       </div>
     </div>
 
     <div class="row" ng-show="type=='people' && !query">
       <div class="col-lg-12">
         <div class="alert alert-warning" role="alert">
-          - 應變中心24H服務專線<br />
-          &nbsp;&nbsp;<a href="tel:0229646715" target="_blank" ng-click="open('提醒','應變中心電話A')">02-29646715 <i class="glyphicon glyphicon-earphone"></i></a>
-          <a href="tel:0289535599" target="_blank" ng-click="open('提醒','應變中心電話B')">02-89535599 <i class="glyphicon glyphicon-earphone"></i></a>
-          <br />
-          - 臺北市醫院就醫之傷者家屬(社會局社工科)<br />
-          &nbsp;&nbsp;<a href="tel:0227206528" target="_blank" ng-click="open('提醒','社會局社工科')">02-27206528 <i class="glyphicon glyphicon-earphone"></i></a>
-          <br />
-          - 陽光基金會<br />
-          &nbsp;&nbsp;北區<a href="tel:0225078006" target="_blank" ng-click="open('提醒','陽光基金會北區')"> 02-25078006 <i class="glyphicon glyphicon-earphone"></i></a>
-          &nbsp;中區<a href="tel:0423582336" target="_blank" ng-click="open('提醒','陽光基金會中區')"> 04-23582336 <i class="glyphicon glyphicon-earphone"></i></a><br />
-          &nbsp;&nbsp;雲嘉<a href="tel:052280300" target="_blank" ng-click="open('提醒','陽光基金會雲嘉')"> 05-2280300 <i class="glyphicon glyphicon-earphone"></i></a>
-          &nbsp;南區<a href="tel:075587166" target="_blank" ng-click="open('提醒','陽光基金會南區')"> 07-5587166 <i class="glyphicon glyphicon-earphone"></i></a><br />
-          &nbsp;&nbsp;東區<a href="tel:038563213" target="_blank" ng-click="open('提醒','陽光基金會東區')"> 03-8563213 <i class="glyphicon glyphicon-earphone"></i></a>
+          - 宜蘭縣政府消防局：<br />
+          &nbsp;&nbsp;<a href="tel:039365027" target="_blank" ng-click="open('提醒','宜蘭縣政府消防局')">039-365027 轉 1808 <i class="glyphicon glyphicon-earphone"></i></a>
         </div>
         <br />
         <div class="alert alert-info" role="alert">
@@ -661,7 +629,7 @@ angular
       }
     });
 
-    $http.get('//tonyq.org/kptaipei/api-20150628.php').success(function (data) {
+    $http.get('').success(function (data) {
       $scope.data = data;
 
       $scope.data.data = $scope.data.data.filter(function(item) {
