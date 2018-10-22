@@ -41,7 +41,10 @@ func main() {
 	}
 	var people []Person
 	for _, sheet := range xlFile.Sheets {
-		for _, row := range sheet.Rows {
+		for i, row := range sheet.Rows {
+			if i == 0 || i==1 {
+				continue
+			}
 			var line []string
 			for _, cell := range row.Cells {
 				line = append(line, cell.String())
