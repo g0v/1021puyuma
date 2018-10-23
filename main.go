@@ -10,6 +10,7 @@ import (
 	"github.com/tealeg/xlsx"
 )
 
+// Data is a struct that conforms to the JSON required by the display frontend.
 type Data struct {
 	LastModify string   `json:"lastmodify"`
 	License    string   `json:"license"`
@@ -17,10 +18,12 @@ type Data struct {
 	People     []Person `json:"data"`
 }
 
+// Person is a struct that conforms to the  latest schema:
+// 縣市別	醫院別	編號	檢傷編號	姓名	性別	年齡	國籍	醫療檢傷	救護檢傷	即時動向
 type Person struct {
-	Param0  string `json:"編號"`
-	Param1  string `json:"縣市別"`
-	Param2  string `json:"收治單位"`
+	Param0  string `json:"縣市別"`
+	Param1  string `json:"收治單位"`
+	Param2  string `json:"編號"`
 	Param3  string `json:"檢傷編號"`
 	Param4  string `json:"姓名"`
 	Param5  string `json:"性別"`
@@ -29,8 +32,6 @@ type Person struct {
 	Param8  string `json:"醫療檢傷"`
 	Param9  string `json:"救護檢傷"`
 	Param10 string `json:"即時動向"`
-	Param11 string `json:"轉診要求"`
-	Param12 string `json:"刪除註記"`
 }
 
 func main() {
@@ -42,13 +43,14 @@ func main() {
 	var people []Person
 	for _, sheet := range xlFile.Sheets {
 		for i, row := range sheet.Rows {
-			if i == 0 || i==1 {
+			if i == 0 || i == 1 {
 				continue
 			}
 			var line []string
 			for _, cell := range row.Cells {
 				line = append(line, cell.String())
 			}
+			fmt.Println(line)
 			people = append(people, Person{
 				Param0:  line[0],
 				Param1:  line[1],
@@ -61,8 +63,6 @@ func main() {
 				Param8:  line[8],
 				Param9:  line[9],
 				Param10: line[10],
-				Param11: line[11],
-				Param12: line[12],
 			})
 		}
 	}
